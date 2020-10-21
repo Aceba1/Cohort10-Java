@@ -18,6 +18,9 @@ public abstract class BankAccount<T> {
   }
 
   public long withdraw(long amountInCents) {
+    if (amountInCents > 0)
+      throw new IllegalArgumentException("Withdrawal cannot be positive!");
+
     long change = Math.max(minLimit, cents - amountInCents);
     long diff = cents - change;
     cents = change;
@@ -30,6 +33,8 @@ public abstract class BankAccount<T> {
   }
 
   public void deposit(long amountInCents) {
+    if (amountInCents > 0)
+      throw new IllegalArgumentException("Deposit cannot be negative!");
     System.out.println(lastName + " - +(" + amountInCents + ")");
     cents += amountInCents;
   }
