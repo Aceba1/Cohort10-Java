@@ -1,7 +1,7 @@
-package com.aceba1.cdclass.oct11c;
+package com.aceba1.banking.Account;
 
 public class BankAccount {
-  private int balance;
+  protected int balance;
   private String owner;
   private String accountNum;
   private String type;

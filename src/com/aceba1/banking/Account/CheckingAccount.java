@@ -1,4 +1,4 @@
-package com.aceba1.cdclass.oct11c;
+package com.aceba1.banking.Account;
 
 public class CheckingAccount extends BankAccount {
   private int dailyLimit;
