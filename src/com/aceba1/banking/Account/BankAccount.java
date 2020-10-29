@@ -1,6 +1,7 @@
 package com.aceba1.banking.Account;
 
 public class BankAccount {
+  // Stored in cents
   protected int balance;
   private String owner;
   private String accountNum;
@@ -31,16 +32,14 @@ public class BankAccount {
     System.out.println(this);
   }
 
+  public String getDollarBalance() {
+    return "$" + balance / 100 + "." + (balance % 100);
+  }
+
   @Override
   public String toString() {
-    return "Bank " +
-      accountNum +
-      " " +
-      type +
-      " (" +
-      owner +
-      "): \t" +
-      balance +
-      "c";
+    return "Bank " + accountNum + " " + type +
+      " (" + owner + "): \t" +
+      getDollarBalance();
   }
 }

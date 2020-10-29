@@ -8,14 +8,13 @@ public class SavingAccount extends BankAccount {
     int balance,
     String owner,
     String accountNum,
-    String type,
     int interest
   ) {
-    super(balance, owner, accountNum, type);
+    super(balance, owner, accountNum, "Saving");
     this.interest = interest;
   }
 
   public void applyInterest() {
-    int amount = balance * 100 * interest;
+    balance += (balance * interest) / 100;
   }
 }
